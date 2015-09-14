@@ -357,6 +357,7 @@ public class GenAlgorithm extends javax.swing.JFrame {
                 mutationButton.setEnabled(true);
                 submitButton.setEnabled(true);
                 crossoverButton.setEnabled(true);
+                
             } catch (IOException ex) {
                 Logger.getLogger(GenAlgorithm.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -633,6 +634,80 @@ public class GenAlgorithm extends javax.swing.JFrame {
         }
     }
     
+    // same as compare data but with inputs
+    public void computeFitness(List<stockData> sd, List<Chromosome> ch){
+        Iterator stockIter = sd.iterator();
+        Iterator chromIter = ch.iterator();
+        int i = 0, j = 0, countStock = 0, countChrom = 0, check = 0;
+        double currentStockData = 0.0;
+        double tempData = 0.0;
+        double sum = 0.0;
+        boolean match = false;
+        
+        
+        while(chromIter.hasNext()){
+ 
+            while(stockIter.hasNext()){
+                
+                currentStockData = sd.get(j).getCol1();
+                //System.out.println("Comparing... " + currentStockData + " & " + chromosomeList.get(i).getNum1());
+                if (countStock == 0){
+                    if ((currentStockData > ch.get(i).getNum1())&& (currentStockData < ch.get(i).getNum2())){
+                        check++;
+                        //System.out.println("Pass0");
+                        
+                    }
+                }
+                else if (countStock == 1){
+                    if ((sd.get(j).getCol2() > ch.get(i).getNum3())&& (sd.get(j).getCol2() < ch.get(i).getNum4())){
+                        check++;
+                        //System.out.println("Pass1");
+                        
+                    }
+                }
+                else if (countStock == 2){
+                    if (ch.get(i).getNum5() == 0){
+                        tempData = sd.get(j).getCol3();
+                        tempData = tempData * -1.0;
+                    }
+                    if (check == 2){
+                        //System.out.println("Passed Both!!!");
+                        match = true;
+                        sum = tempData + sum;
+                    }
+                }
+                stockIter.next();
+                countStock++;
+                if(countStock > 2){
+                    countStock = 0;
+                    check = 0;
+                }
+                j++;
+            }
+            j = 0;
+            stockIter = sd.iterator(); // reset iterator
+            sum = Math.round(sum*100.0)/100.0;
+            chromIter.next();
+            
+            if(match != true){
+                sum = -5000;
+                                        //System.out.println("in match");
+
+            }
+            System.out.println("Fitness of Chromosome " + (i+1) + " = " + sum);
+            textArea.append("Fitness of Chromosome " + (i+1) + " = " + sum + "\n");
+            ch.get(i).setFitness(sum);
+            sum = 0;
+            match = false;
+            tempData = 0;
+            i++;
+            
+            
+        }
+        sortChromosomes();
+        
+    }    
+
     public void compareData(){
         Iterator stockIter = stockDataList.iterator();
         Iterator chromIter = chromosomeList.iterator();

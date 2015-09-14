@@ -69,6 +69,11 @@ public class GenAlgorithm extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         printChild = new javax.swing.JButton();
         submitButton = new javax.swing.JButton();
+        errorLabel = new javax.swing.JLabel();
+        populationSize = new javax.swing.JTextField();
+        populationSizeLabel = new javax.swing.JLabel();
+        percentagePopulationField = new javax.swing.JTextField();
+        percentageLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -196,6 +201,13 @@ public class GenAlgorithm extends javax.swing.JFrame {
             }
         });
 
+        errorLabel.setForeground(new java.awt.Color(255, 0, 51));
+        errorLabel.setText("Error");
+
+        populationSizeLabel.setText("Population Size: ");
+
+        percentageLabel.setText("Percentage formed using selection: ");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -206,35 +218,42 @@ public class GenAlgorithm extends javax.swing.JFrame {
                 .addComponent(clearWindowButton)
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel2)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(probabilityLabel)
-                                .addGap(40, 40, 40))
-                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING))
-                        .addComponent(multipleChromosomesLabel))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(printChild)
                         .addGap(73, 73, 73)
-                        .addComponent(printButton)))
+                        .addComponent(printButton))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(64, 64, 64)
+                        .addComponent(errorLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                    .addComponent(probabilityLabel)
+                                    .addGap(40, 40, 40))
+                                .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING))
+                            .addComponent(multipleChromosomesLabel)
+                            .addComponent(multipleChromosomesError, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(populationSizeLabel)
+                            .addComponent(percentageLabel))))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(selectFileButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
                         .addComponent(sortButton))
-                    .addComponent(multipleChromosomesError, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(submitButton)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(mutationField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE)
-                                .addComponent(nextGenField)
-                                .addComponent(crossoverTextField)
-                                .addComponent(numChromosomesField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(mutationField, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(nextGenField)
+                            .addComponent(crossoverTextField)
+                            .addComponent(numChromosomesField, javax.swing.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE)
+                            .addComponent(populationSize)
+                            .addComponent(percentagePopulationField))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -273,13 +292,20 @@ public class GenAlgorithm extends javax.swing.JFrame {
                     .addComponent(sortButton)
                     .addComponent(printButton)
                     .addComponent(printChild))
-                .addGap(69, 69, 69)
-                .addComponent(multipleChromosomesError, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31)
+                .addGap(51, 51, 51)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(populationSize, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(populationSizeLabel))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(percentagePopulationField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(percentageLabel))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(numChromosomesField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(multipleChromosomesLabel)
-                    .addComponent(numChromosomesButton))
+                    .addComponent(numChromosomesButton)
+                    .addComponent(errorLabel))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
@@ -307,8 +333,10 @@ public class GenAlgorithm extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(uniformRadioButton)))
                 .addGap(18, 18, 18)
-                .addComponent(submitButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(submitButton)
+                    .addComponent(multipleChromosomesError, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
                 .addComponent(clearWindowButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -422,8 +450,32 @@ public class GenAlgorithm extends javax.swing.JFrame {
 
     private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitButtonActionPerformed
         // TODO add your handling code here:
+        double initChrom = 0.0;
         
-        int numClone = Integer.parseInt(nextGenField.getText());
+        
+        if (numChromosomesField.getText().isEmpty() || Integer.parseInt(numChromosomesField.getText()) < 0)
+            errorLabel.setText("Error fields out of bound");
+        else if (crossoverTextField.getText().isEmpty() || Integer.parseInt(crossoverTextField.getText()) < 0)
+            errorLabel.setText("Error fields out of bound");
+        else if (nextGenField.getText().isEmpty() || Integer.parseInt(nextGenField.getText()) < 0)
+            errorLabel.setText("Error fields out of bound");
+        else if (mutationField.getText().isEmpty() || Integer.parseInt(mutationField.getText()) < 0)
+            errorLabel.setText("Error fields out of bound");
+
+        else{
+            errorLabel.setText(null);
+
+            int numChrom1 = Integer.parseInt(populationSize.getText());
+            double prob = (Double.parseDouble(percentagePopulationField.getText()) * .01);
+            initChrom = (double)numChrom1 * prob;
+            
+            System.out.println("initchrom: " + initChrom);
+            
+            makeMultipleChromosomes(numChrom1);
+            
+        
+        //int numClone = Integer.parseInt(nextGenField.getText());
+            int numClone = (int)initChrom;
         if(elitistRadioButton.isSelected())
             elitistNextGen(numClone);
         else
@@ -447,8 +499,9 @@ public class GenAlgorithm extends javax.swing.JFrame {
         System.out.println(probability);
         mutateChromosomes(chromosomeNextGen, probability);
         
+        
         displayChromosomes(chromosomeNextGen);
-
+        }
     }//GEN-LAST:event_submitButtonActionPerformed
 
     /**
@@ -940,6 +993,7 @@ public class GenAlgorithm extends javax.swing.JFrame {
     private javax.swing.JButton crossoverButton;
     private javax.swing.JTextField crossoverTextField;
     private javax.swing.JRadioButton elitistRadioButton;
+    private javax.swing.JLabel errorLabel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
@@ -953,6 +1007,10 @@ public class GenAlgorithm extends javax.swing.JFrame {
     private javax.swing.JButton numChromosomesButton;
     private javax.swing.JTextField numChromosomesField;
     private javax.swing.JLabel percentLabel;
+    private javax.swing.JLabel percentageLabel;
+    private javax.swing.JTextField percentagePopulationField;
+    private javax.swing.JTextField populationSize;
+    private javax.swing.JLabel populationSizeLabel;
     private javax.swing.JButton printButton;
     private javax.swing.JButton printChild;
     private javax.swing.JLabel probabilityLabel;

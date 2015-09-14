@@ -30,42 +30,49 @@
               <EmptySpace max="-2" attributes="0"/>
           </Group>
           <Group type="102" alignment="1" attributes="0">
-              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="1" attributes="0">
-                              <Component id="probabilityLabel" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="jLabel1" alignment="1" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Component id="multipleChromosomesLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                  </Group>
+              <Group type="103" groupAlignment="1" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       <Component id="printChild" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="73" max="-2" attributes="0"/>
                       <Component id="printButton" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
+                      <Component id="errorLabel" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Component id="probabilityLabel" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="jLabel1" alignment="1" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="multipleChromosomesLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="multipleChromosomesError" alignment="0" min="-2" pref="128" max="-2" attributes="0"/>
+                          <Component id="populationSizeLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="percentageLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" max="-2" attributes="0">
                   <Group type="102" attributes="0">
                       <Component id="selectFileButton" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="37" max="32767" attributes="0"/>
                       <Component id="sortButton" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <Component id="multipleChromosomesError" alignment="0" min="-2" pref="128" max="-2" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="1" attributes="0">
+                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
                           <Component id="submitButton" min="-2" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                              <Component id="mutationField" alignment="0" pref="129" max="32767" attributes="0"/>
-                              <Component id="nextGenField" alignment="1" max="32767" attributes="0"/>
-                              <Component id="crossoverTextField" max="32767" attributes="0"/>
-                              <Component id="numChromosomesField" alignment="0" min="-2" pref="128" max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="mutationField" alignment="0" max="32767" attributes="0"/>
+                          <Component id="nextGenField" alignment="1" max="32767" attributes="0"/>
+                          <Component id="crossoverTextField" max="32767" attributes="0"/>
+                          <Component id="numChromosomesField" alignment="1" pref="129" max="32767" attributes="0"/>
+                          <Component id="populationSize" alignment="1" max="32767" attributes="0"/>
+                          <Component id="percentagePopulationField" alignment="1" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -121,13 +128,22 @@
                   <Component id="printButton" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="printChild" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
-              <Component id="multipleChromosomesError" min="-2" pref="19" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="populationSize" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="populationSizeLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="percentagePopulationField" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="percentageLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="numChromosomesField" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="multipleChromosomesLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="numChromosomesButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="errorLabel" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -162,8 +178,11 @@
                   </Group>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="submitButton" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="44" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="submitButton" min="-2" max="-2" attributes="0"/>
+                  <Component id="multipleChromosomesError" min="-2" pref="19" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="36" max="32767" attributes="0"/>
               <Component id="clearWindowButton" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jScrollPane1" min="-2" pref="195" max="-2" attributes="0"/>
@@ -349,6 +368,28 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="submitButtonActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="errorLabel">
+      <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="33" green="0" red="ff" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Error"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="populationSize">
+    </Component>
+    <Component class="javax.swing.JLabel" name="populationSizeLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Population Size: "/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="percentagePopulationField">
+    </Component>
+    <Component class="javax.swing.JLabel" name="percentageLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Percentage formed using selection: "/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>

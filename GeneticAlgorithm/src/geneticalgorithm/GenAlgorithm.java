@@ -43,14 +43,6 @@ public class GenAlgorithm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        resultField = new javax.swing.JTextField();
-        generateButton = new javax.swing.JButton();
-        numField1 = new javax.swing.JTextField();
-        numField2 = new javax.swing.JTextField();
-        numField3 = new javax.swing.JTextField();
-        numField4 = new javax.swing.JTextField();
-        numField5 = new javax.swing.JTextField();
-        makeChromosomeButton = new javax.swing.JButton();
         selectFileButton = new javax.swing.JButton();
         numChromosomesButton = new javax.swing.JButton();
         numChromosomesField = new javax.swing.JTextField();
@@ -65,7 +57,6 @@ public class GenAlgorithm extends javax.swing.JFrame {
         nextGenField = new javax.swing.JTextField();
         nextGenButton = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        generateRandomLabel = new javax.swing.JLabel();
         sortButton = new javax.swing.JButton();
         printButton = new javax.swing.JButton();
         elitistRadioButton = new javax.swing.JRadioButton();
@@ -77,31 +68,19 @@ public class GenAlgorithm extends javax.swing.JFrame {
         crossoverTextField = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         printChild = new javax.swing.JButton();
+        submitButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        generateButton.setText("Generate Random");
-        generateButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                generateButtonActionPerformed(evt);
-            }
-        });
-
-        makeChromosomeButton.setText("Make Chromosome");
-        makeChromosomeButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                makeChromosomeButtonActionPerformed(evt);
-            }
-        });
-
         selectFileButton.setText("Select File / Calculate fitness");
+        selectFileButton.setEnabled(false);
         selectFileButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 selectFileButtonActionPerformed(evt);
             }
         });
 
-        numChromosomesButton.setText("Mult Chromosomes");
+        numChromosomesButton.setText("Create");
         numChromosomesButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 numChromosomesButtonActionPerformed(evt);
@@ -120,6 +99,7 @@ public class GenAlgorithm extends javax.swing.JFrame {
         mutationField.setText("0");
 
         mutationButton.setText("Mutate");
+        mutationButton.setEnabled(false);
         mutationButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mutationButtonActionPerformed(evt);
@@ -131,6 +111,7 @@ public class GenAlgorithm extends javax.swing.JFrame {
         probabilityLabel.setText("Probability of mutation(default = 0): ");
 
         nextGenButton.setText("Next Generation");
+        nextGenButton.setEnabled(false);
         nextGenButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nextGenButtonActionPerformed(evt);
@@ -138,8 +119,6 @@ public class GenAlgorithm extends javax.swing.JFrame {
         });
 
         jLabel1.setText("Number of Chromosomes to next generation:");
-
-        generateRandomLabel.setText("Generates Random number: ");
 
         sortButton.setText("sort");
         sortButton.addActionListener(new java.awt.event.ActionListener() {
@@ -193,6 +172,7 @@ public class GenAlgorithm extends javax.swing.JFrame {
         });
 
         crossoverButton.setText("Crossover");
+        crossoverButton.setEnabled(false);
         crossoverButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 crossoverButtonActionPerformed(evt);
@@ -208,79 +188,55 @@ public class GenAlgorithm extends javax.swing.JFrame {
             }
         });
 
+        submitButton.setText("Submit");
+        submitButton.setEnabled(false);
+        submitButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                submitButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 880, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(uniformRadioButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(clearWindowButton))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(kPointRadioButton)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap(771, Short.MAX_VALUE)
+                .addComponent(clearWindowButton)
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(elitistRadioButton)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel2)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(probabilityLabel)
-                                        .addComponent(multipleChromosomesLabel)
-                                        .addComponent(generateRandomLabel))
-                                    .addGap(40, 40, 40))
-                                .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING))))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(probabilityLabel)
+                                .addGap(40, 40, 40))
+                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addComponent(multipleChromosomesLabel))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(tournamentRadioButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(printChild)
-                                .addGap(73, 73, 73)
-                                .addComponent(printButton))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(numField1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(numField2, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(numField3, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addComponent(printChild)
+                        .addGap(73, 73, 73)
+                        .addComponent(printButton)))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(selectFileButton)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(sortButton))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(numChromosomesField)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(numField4, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(numField5, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addComponent(multipleChromosomesError, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGap(18, 18, 18)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(numChromosomesButton)
-                                .addComponent(makeChromosomeButton)))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(selectFileButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(sortButton))
+                    .addComponent(multipleChromosomesError, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(submitButton)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(mutationField, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(resultField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE)
+                                .addComponent(mutationField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE)
                                 .addComponent(nextGenField)
-                                .addComponent(crossoverTextField))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(crossoverTextField)
+                                .addComponent(numChromosomesField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                     .addComponent(percentLabel)
@@ -289,10 +245,24 @@ public class GenAlgorithm extends javax.swing.JFrame {
                                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                     .addGap(0, 0, Short.MAX_VALUE)
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(generateButton, javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(crossoverButton, javax.swing.GroupLayout.Alignment.TRAILING))))))
-                    .addComponent(nextGenButton, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addGap(229, 229, 229))
+                                        .addComponent(crossoverButton, javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(numChromosomesButton, javax.swing.GroupLayout.Alignment.TRAILING))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(13, 13, 13)
+                                .addComponent(nextGenButton)))))
+                .addGap(35, 35, 35)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(uniformRadioButton, javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(kPointRadioButton)
+                            .addGap(4, 4, 4)))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(elitistRadioButton)
+                            .addGap(32, 32, 32))
+                        .addComponent(tournamentRadioButton, javax.swing.GroupLayout.Alignment.TRAILING)))
+                .addGap(81, 81, 81))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -303,96 +273,49 @@ public class GenAlgorithm extends javax.swing.JFrame {
                     .addComponent(sortButton)
                     .addComponent(printButton)
                     .addComponent(printChild))
-                .addGap(21, 21, 21)
-                .addComponent(elitistRadioButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(numField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(numField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(numField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(numField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(numField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(makeChromosomeButton)
-                    .addComponent(tournamentRadioButton))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(69, 69, 69)
                 .addComponent(multipleChromosomesError, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(11, 11, 11)
+                .addGap(31, 31, 31)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(numChromosomesButton)
                     .addComponent(numChromosomesField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(multipleChromosomesLabel))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(resultField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(generateButton)
-                    .addComponent(generateRandomLabel))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(mutationField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(mutationButton)
-                    .addComponent(percentLabel)
-                    .addComponent(probabilityLabel))
+                    .addComponent(multipleChromosomesLabel)
+                    .addComponent(numChromosomesButton))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(nextGenField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1)
-                    .addComponent(nextGenButton))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(mutationField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(mutationButton)
+                            .addComponent(percentLabel)
+                            .addComponent(probabilityLabel))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(nextGenField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1)
+                            .addComponent(nextGenButton))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(crossoverButton)
+                            .addComponent(crossoverTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel2)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(elitistRadioButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(tournamentRadioButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(kPointRadioButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(uniformRadioButton)))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(crossoverButton)
-                    .addComponent(crossoverTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
-                .addComponent(kPointRadioButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(clearWindowButton)
-                    .addComponent(uniformRadioButton))
+                .addComponent(submitButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
+                .addComponent(clearWindowButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void generateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_generateButtonActionPerformed
-        String txt;
-        
-        gen = generateRandom();
-        gen = Math.round(gen*100.0)/100.0;
-        txt = Double.toString(gen);
-        resultField.setText(txt);
-        /*
-        genNum = generateRandomBin();
-        txt= Integer.toString(genNum);
-        resultField.setText(txt);
-        */
-    }//GEN-LAST:event_generateButtonActionPerformed
-
-    private void makeChromosomeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_makeChromosomeButtonActionPerformed
-        Chromosome c1 = generateChromosome();
-        String txt1, txt2, txt3, txt4, txt5;
-        double num1, num2, num3, num4;
-        int num5;
-        num1 = c1.getNum1();
-        num2 = c1.getNum2();
-        num3 = c1.getNum3();
-        num4 = c1.getNum4();
-        num5 = c1.getNum5();
-        
-        txt1 = Double.toString(num1);
-        txt2 = Double.toString(num2);
-        txt3 = Double.toString(num3);
-        txt4 = Double.toString(num4);
-        txt5 = Integer.toString(num5);
-        
-        numField1.setText(txt1);
-        numField2.setText(txt2);
-        numField3.setText(txt3);
-        numField4.setText(txt4);
-        numField5.setText(txt5);
-        
-    }//GEN-LAST:event_makeChromosomeButtonActionPerformed
 
     private void selectFileButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_selectFileButtonActionPerformed
         int returnVal = fc.showOpenDialog(null);
@@ -402,6 +325,10 @@ public class GenAlgorithm extends javax.swing.JFrame {
             sFile = selectedFile.toString();
             try {
                 readFile2(selectedFile);
+                nextGenButton.setEnabled(true);
+                mutationButton.setEnabled(true);
+                submitButton.setEnabled(true);
+                crossoverButton.setEnabled(true);
             } catch (IOException ex) {
                 Logger.getLogger(GenAlgorithm.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -413,6 +340,7 @@ public class GenAlgorithm extends javax.swing.JFrame {
             int numChrom1 = Integer.parseInt(numChromosomesField.getText());
             makeMultipleChromosomes(numChrom1);
             printChromosomes();
+            selectFileButton.setEnabled(true);
         }
         else
             multipleChromosomesError.setText("Field is empty.");
@@ -428,11 +356,6 @@ public class GenAlgorithm extends javax.swing.JFrame {
             tournamentNextGen(numClone);
         displayChromosomes(chromosomeNextGen);
     }//GEN-LAST:event_nextGenButtonActionPerformed
-
-    private void sortButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sortButtonActionPerformed
-        sortChromosomes();
-        //printChromosomes();
-    }//GEN-LAST:event_sortButtonActionPerformed
 
     private void mutationButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mutationButtonActionPerformed
         double probability = Double.parseDouble(mutationField.getText()) * .01;
@@ -491,6 +414,42 @@ public class GenAlgorithm extends javax.swing.JFrame {
         }
         displayChromosomes(childList);
     }//GEN-LAST:event_crossoverButtonActionPerformed
+
+    private void sortButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sortButtonActionPerformed
+        sortChromosomes();
+        //printChromosomes();
+    }//GEN-LAST:event_sortButtonActionPerformed
+
+    private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitButtonActionPerformed
+        // TODO add your handling code here:
+        
+        int numClone = Integer.parseInt(nextGenField.getText());
+        if(elitistRadioButton.isSelected())
+            elitistNextGen(numClone);
+        else
+            tournamentNextGen(numClone);
+        //displayChromosomes(chromosomeNextGen);
+        
+        
+        int i = 0;
+        Chromosome b = new Chromosome();
+        int num = Integer.parseInt(crossoverTextField.getText());
+        while(i < num){
+            b = uniformCreation(chromosomeList);
+            chromosomeNextGen.add(b);
+            //printChromosome(b);
+            b = new Chromosome();
+            i++;
+        }
+        //displayChromosomes(childList);              
+        
+        double probability = Double.parseDouble(mutationField.getText()) * .01;
+        System.out.println(probability);
+        mutateChromosomes(chromosomeNextGen, probability);
+        
+        displayChromosomes(chromosomeNextGen);
+
+    }//GEN-LAST:event_submitButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -981,13 +940,10 @@ public class GenAlgorithm extends javax.swing.JFrame {
     private javax.swing.JButton crossoverButton;
     private javax.swing.JTextField crossoverTextField;
     private javax.swing.JRadioButton elitistRadioButton;
-    private javax.swing.JButton generateButton;
-    private javax.swing.JLabel generateRandomLabel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JRadioButton kPointRadioButton;
-    private javax.swing.JButton makeChromosomeButton;
     private javax.swing.JLabel multipleChromosomesError;
     private javax.swing.JLabel multipleChromosomesLabel;
     private javax.swing.JButton mutationButton;
@@ -996,18 +952,13 @@ public class GenAlgorithm extends javax.swing.JFrame {
     private javax.swing.JTextField nextGenField;
     private javax.swing.JButton numChromosomesButton;
     private javax.swing.JTextField numChromosomesField;
-    private javax.swing.JTextField numField1;
-    private javax.swing.JTextField numField2;
-    private javax.swing.JTextField numField3;
-    private javax.swing.JTextField numField4;
-    private javax.swing.JTextField numField5;
     private javax.swing.JLabel percentLabel;
     private javax.swing.JButton printButton;
     private javax.swing.JButton printChild;
     private javax.swing.JLabel probabilityLabel;
-    private javax.swing.JTextField resultField;
     private javax.swing.JButton selectFileButton;
     private javax.swing.JButton sortButton;
+    private javax.swing.JButton submitButton;
     private javax.swing.JTextArea textArea;
     private javax.swing.JRadioButton tournamentRadioButton;
     private javax.swing.JRadioButton uniformRadioButton;

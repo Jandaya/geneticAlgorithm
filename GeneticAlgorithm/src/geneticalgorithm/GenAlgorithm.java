@@ -603,39 +603,39 @@ public class GenAlgorithm extends javax.swing.JFrame {
         
         //iterate through chromosomes
         while(chromIter.hasNext()){
-            textArea.append("\n || ");
-                displayMaxChromosome(ch.get(i));
-                textArea.append(" || ");
+                //textArea.append("\n || ");
+                //displayMaxChromosome(ch.get(i));
+                //textArea.append(" || ");
         // iterate through stockData
             while(stockIter.hasNext()){
                 
                 currentStockData = sd.get(j).getCol1();
                 
-                if (countStock == 0){
                     if ((sd.get(j).getCol1() > ch.get(i).getNum1())&& (sd.get(j).getCol1() < ch.get(i).getNum2())){
                         check++;   
-                        textArea.append("Pass0");
+                        //textArea.append("Pass0");
                     }
-                }
-                else if (countStock == 1){
+                
+               
                     if ((sd.get(j).getCol2() > ch.get(i).getNum3())&& (sd.get(j).getCol2() < ch.get(i).getNum4())){
                         check++;      
-                                                textArea.append("Pass1");
+                        //textArea.append("Pass1");
                     }
-                }
-                else if (countStock == 2){
-                    if (ch.get(i).getNum5() == 0){
-                        tempData = sd.get(j).getCol3();
-                        tempData = tempData * -1.0;
-                    }
-                    if (check == 2){
-                                                textArea.append("Pass Both! \n");
+                
+                    
+                    if (check > 1){
+                        if (ch.get(i).getNum5() == 0){
+                            tempData = sd.get(j).getCol3();
+                            tempData = tempData * -1.0;
+                        }
+                        else
+                            tempData = sd.get(j).getCol3();
+                        //textArea.append("Pass Both! \n");
 
                         match = true;
                         sum = tempData + sum;
                         check = 0;
                     }
-                }
                 stockIter.next();
                 countStock++;
                 if(countStock > 2){
@@ -653,6 +653,7 @@ public class GenAlgorithm extends javax.swing.JFrame {
 
             }
             ch.get(i).setFitness(sum);
+            check = 0;
             sum = 0;
             match = false;
             tempData = 0;

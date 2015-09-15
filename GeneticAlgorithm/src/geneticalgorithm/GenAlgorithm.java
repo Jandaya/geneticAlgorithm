@@ -44,51 +44,34 @@ public class GenAlgorithm extends javax.swing.JFrame {
     private void initComponents() {
 
         selectFileButton = new javax.swing.JButton();
-        numChromosomesButton = new javax.swing.JButton();
-        numChromosomesField = new javax.swing.JTextField();
         multipleChromosomesError = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         textArea = new javax.swing.JTextArea();
-        multipleChromosomesLabel = new javax.swing.JLabel();
         mutationField = new javax.swing.JTextField();
-        mutationButton = new javax.swing.JButton();
         percentLabel = new javax.swing.JLabel();
         probabilityLabel = new javax.swing.JLabel();
-        nextGenField = new javax.swing.JTextField();
-        nextGenButton = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        sortButton = new javax.swing.JButton();
         printButton = new javax.swing.JButton();
         elitistRadioButton = new javax.swing.JRadioButton();
         tournamentRadioButton = new javax.swing.JRadioButton();
         clearWindowButton = new javax.swing.JButton();
         kPointRadioButton = new javax.swing.JRadioButton();
         uniformRadioButton = new javax.swing.JRadioButton();
-        crossoverButton = new javax.swing.JButton();
-        crossoverTextField = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        printChild = new javax.swing.JButton();
         submitButton = new javax.swing.JButton();
         errorLabel = new javax.swing.JLabel();
         populationSize = new javax.swing.JTextField();
         populationSizeLabel = new javax.swing.JLabel();
         percentagePopulationField = new javax.swing.JTextField();
         percentageLabel = new javax.swing.JLabel();
+        numGenerationsField = new javax.swing.JTextField();
+        numGenerationsLabel = new javax.swing.JLabel();
+        percentLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        selectFileButton.setText("Select File / Calculate fitness");
-        selectFileButton.setEnabled(false);
+        selectFileButton.setText("Select File");
         selectFileButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 selectFileButtonActionPerformed(evt);
-            }
-        });
-
-        numChromosomesButton.setText("Create");
-        numChromosomesButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                numChromosomesButtonActionPerformed(evt);
             }
         });
 
@@ -99,40 +82,14 @@ public class GenAlgorithm extends javax.swing.JFrame {
         textArea.setFocusable(false);
         jScrollPane1.setViewportView(textArea);
 
-        multipleChromosomesLabel.setText("Enter number of Chromosomes:");
-
         mutationField.setText("0");
-
-        mutationButton.setText("Mutate");
-        mutationButton.setEnabled(false);
-        mutationButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mutationButtonActionPerformed(evt);
-            }
-        });
 
         percentLabel.setText("%");
 
         probabilityLabel.setText("Probability of mutation(default = 0): ");
 
-        nextGenButton.setText("Next Generation");
-        nextGenButton.setEnabled(false);
-        nextGenButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nextGenButtonActionPerformed(evt);
-            }
-        });
-
-        jLabel1.setText("Number of Chromosomes to next generation:");
-
-        sortButton.setText("sort");
-        sortButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                sortButtonActionPerformed(evt);
-            }
-        });
-
-        printButton.setText("Print");
+        printButton.setText("Print Chromosomes");
+        printButton.setEnabled(false);
         printButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 printButtonActionPerformed(evt);
@@ -176,23 +133,6 @@ public class GenAlgorithm extends javax.swing.JFrame {
             }
         });
 
-        crossoverButton.setText("Crossover");
-        crossoverButton.setEnabled(false);
-        crossoverButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                crossoverButtonActionPerformed(evt);
-            }
-        });
-
-        jLabel2.setText("number of children to create");
-
-        printChild.setText("Print Child");
-        printChild.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                printChildActionPerformed(evt);
-            }
-        });
-
         submitButton.setText("Submit");
         submitButton.setEnabled(false);
         submitButton.addActionListener(new java.awt.event.ActionListener() {
@@ -202,142 +142,119 @@ public class GenAlgorithm extends javax.swing.JFrame {
         });
 
         errorLabel.setForeground(new java.awt.Color(255, 0, 51));
-        errorLabel.setText("Error");
+        errorLabel.setText("Select data input file");
+
+        populationSize.setText("10");
 
         populationSizeLabel.setText("Population Size: ");
 
+        percentagePopulationField.setText("0");
+
         percentageLabel.setText("Percentage formed using selection: ");
+
+        numGenerationsField.setText("1");
+
+        numGenerationsLabel.setText("Number of generations to run");
+
+        percentLabel1.setText("%");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 880, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(771, Short.MAX_VALUE)
-                .addComponent(clearWindowButton)
-                .addContainerGap())
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 894, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(printChild)
-                        .addGap(73, 73, 73)
-                        .addComponent(printButton))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(64, 64, 64)
-                        .addComponent(errorLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                    .addComponent(probabilityLabel)
-                                    .addGap(40, 40, 40))
-                                .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING))
-                            .addComponent(multipleChromosomesLabel)
-                            .addComponent(multipleChromosomesError, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(populationSizeLabel)
-                            .addComponent(percentageLabel))))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(selectFileButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
-                        .addComponent(sortButton))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(submitButton)
-                            .addComponent(mutationField, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(nextGenField)
-                            .addComponent(crossoverTextField)
-                            .addComponent(numChromosomesField, javax.swing.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE)
-                            .addComponent(populationSize)
-                            .addComponent(percentagePopulationField))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                    .addComponent(percentLabel)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(mutationButton))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                    .addGap(0, 0, Short.MAX_VALUE)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(crossoverButton, javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(numChromosomesButton, javax.swing.GroupLayout.Alignment.TRAILING))))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(13, 13, 13)
-                                .addComponent(nextGenButton)))))
-                .addGap(35, 35, 35)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(uniformRadioButton, javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(kPointRadioButton)
-                            .addGap(4, 4, 4)))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(elitistRadioButton)
-                            .addGap(32, 32, 32))
-                        .addComponent(tournamentRadioButton, javax.swing.GroupLayout.Alignment.TRAILING)))
-                .addGap(81, 81, 81))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(clearWindowButton)
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(probabilityLabel)
+                            .addComponent(populationSizeLabel)
+                            .addComponent(percentageLabel)
+                            .addComponent(numGenerationsLabel))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(97, 97, 97)
+                                .addComponent(multipleChromosomesError, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(58, 58, 58)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(errorLabel)
+                                        .addComponent(mutationField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(populationSize, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(percentagePopulationField, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(numGenerationsField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(printButton)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(submitButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(selectFileButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(percentLabel)
+                                    .addComponent(percentLabel1))))
+                        .addGap(60, 60, 60)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(uniformRadioButton, javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(kPointRadioButton)
+                                    .addGap(4, 4, 4)))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(elitistRadioButton)
+                                    .addGap(32, 32, 32))
+                                .addComponent(tournamentRadioButton, javax.swing.GroupLayout.Alignment.TRAILING)))
+                        .addGap(81, 81, 81))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(40, 40, 40)
+                .addGap(81, 81, 81)
+                .addComponent(multipleChromosomesError, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(48, 48, 48)
+                .addComponent(errorLabel)
+                .addGap(9, 9, 9)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(selectFileButton)
-                    .addComponent(sortButton)
-                    .addComponent(printButton)
-                    .addComponent(printChild))
-                .addGap(51, 51, 51)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(populationSize, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(populationSizeLabel))
+                    .addComponent(populationSizeLabel)
+                    .addComponent(populationSize, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(percentagePopulationField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(percentageLabel))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(numChromosomesField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(multipleChromosomesLabel)
-                    .addComponent(numChromosomesButton)
-                    .addComponent(errorLabel))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(mutationField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(mutationButton)
-                            .addComponent(percentLabel)
-                            .addComponent(probabilityLabel))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(nextGenField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1)
-                            .addComponent(nextGenButton))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(crossoverButton)
-                            .addComponent(crossoverTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(percentageLabel)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(percentagePopulationField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(percentLabel1)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(elitistRadioButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(tournamentRadioButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(13, 13, 13)
                         .addComponent(kPointRadioButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(uniformRadioButton)))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(submitButton)
-                    .addComponent(multipleChromosomesError, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
-                .addComponent(clearWindowButton)
+                        .addComponent(uniformRadioButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
+                        .addComponent(clearWindowButton))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(mutationField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(percentLabel)
+                            .addComponent(probabilityLabel))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(numGenerationsField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(numGenerationsLabel))
+                        .addGap(18, 18, 18)
+                        .addComponent(submitButton)
+                        .addGap(9, 9, 9)
+                        .addComponent(selectFileButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(printButton)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -353,10 +270,8 @@ public class GenAlgorithm extends javax.swing.JFrame {
             sFile = selectedFile.toString();
             try {
                 readFile2(selectedFile);
-                nextGenButton.setEnabled(true);
-                mutationButton.setEnabled(true);
                 submitButton.setEnabled(true);
-                crossoverButton.setEnabled(true);
+                errorLabel.setText(null);
                 
             } catch (IOException ex) {
                 Logger.getLogger(GenAlgorithm.class.getName()).log(Level.SEVERE, null, ex);
@@ -364,36 +279,8 @@ public class GenAlgorithm extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_selectFileButtonActionPerformed
 
-    private void numChromosomesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numChromosomesButtonActionPerformed
-        if (!(numChromosomesField.getText().isEmpty())){
-            int numChrom1 = Integer.parseInt(numChromosomesField.getText());
-            makeMultipleChromosomes(numChrom1);
-            printChromosomes();
-            selectFileButton.setEnabled(true);
-        }
-        else
-            multipleChromosomesError.setText("Field is empty.");
-        
-        //chromosomeList.clear();
-    }//GEN-LAST:event_numChromosomesButtonActionPerformed
-
-    private void nextGenButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextGenButtonActionPerformed
-        int numClone = Integer.parseInt(nextGenField.getText());
-        if(elitistRadioButton.isSelected())
-            elitistNextGen(numClone);
-        else
-            tournamentNextGen(numClone);
-        displayChromosomes(chromosomeNextGen);
-    }//GEN-LAST:event_nextGenButtonActionPerformed
-
-    private void mutationButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mutationButtonActionPerformed
-        double probability = Double.parseDouble(mutationField.getText()) * .01;
-        System.out.println(probability);
-        mutateChromosomes(chromosomeList, probability);
-    }//GEN-LAST:event_mutationButtonActionPerformed
-
     private void printButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_printButtonActionPerformed
-        printChromosomes();
+        displayChromosomes(chromosomeNextGen);
     }//GEN-LAST:event_printButtonActionPerformed
 
     private void tournamentRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tournamentRadioButtonActionPerformed
@@ -422,86 +309,97 @@ public class GenAlgorithm extends javax.swing.JFrame {
         kPointRadioButton.setSelected(false);
     }//GEN-LAST:event_uniformRadioButtonActionPerformed
 
-    private void printChildActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_printChildActionPerformed
-        // TODO add your handling code here:
-        Chromosome a = new Chromosome();
-        a = uniformCreation(chromosomeList);
-        printChromosome(a);
-    }//GEN-LAST:event_printChildActionPerformed
-
-    private void crossoverButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crossoverButtonActionPerformed
-        // TODO add your handling code here:
-        int i = 0;
-        Chromosome b = new Chromosome();
-        int num = Integer.parseInt(crossoverTextField.getText());
-        while(i < num){
-            b = uniformCreation(chromosomeList);
-            childList.add(b);
-            //printChromosome(b);
-            b = new Chromosome();
-            i++;
-        }
-        displayChromosomes(childList);
-    }//GEN-LAST:event_crossoverButtonActionPerformed
-
-    private void sortButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sortButtonActionPerformed
-        sortChromosomes();
-        //printChromosomes();
-    }//GEN-LAST:event_sortButtonActionPerformed
-
     private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitButtonActionPerformed
         // TODO add your handling code here:
-        double initChrom = 0.0;
+        double initChrom = 0.0, average = 0.0, max = 0.0, min = 0.0, percent = 0.0;        
+        int i = 0, numGenerations, n = 0, countGen = 0, popSize = 0;
+        Chromosome maxChromosome = new Chromosome();
         
-        
-        if (numChromosomesField.getText().isEmpty() || Integer.parseInt(numChromosomesField.getText()) < 0)
-            errorLabel.setText("Error fields out of bound");
-        else if (crossoverTextField.getText().isEmpty() || Integer.parseInt(crossoverTextField.getText()) < 0)
-            errorLabel.setText("Error fields out of bound");
-        else if (nextGenField.getText().isEmpty() || Integer.parseInt(nextGenField.getText()) < 0)
-            errorLabel.setText("Error fields out of bound");
-        else if (mutationField.getText().isEmpty() || Integer.parseInt(mutationField.getText()) < 0)
-            errorLabel.setText("Error fields out of bound");
+        // checks each field to see if range is valid
+        if (mutationField.getText().isEmpty() || Integer.parseInt(mutationField.getText()) < 0)
+            errorLabel.setText("Error: Mutation field out of bounds");
+        else if (percentagePopulationField.getText().isEmpty() || Integer.parseInt(percentagePopulationField.getText()) < 0)
+            errorLabel.setText("Error: Percentage population field out of bounds");
+        else if (populationSize.getText().isEmpty() || Integer.parseInt(populationSize.getText()) < 0)
+            errorLabel.setText("Error: Population size field out of bound");
 
         else{
             errorLabel.setText(null);
+            printButton.setEnabled(true);
+            
+            // gets the number of generations desired by user
+            numGenerations = Integer.parseInt(numGenerationsField.getText());
+            
+            //gets user input for population size and percentage desired
+            // calculates the number of chromosomes to use for cloning or crossover
+            popSize = Integer.parseInt(populationSize.getText());
+            percent = (Double.parseDouble(percentagePopulationField.getText()) * .01);
+            initChrom = (double)popSize * percent;
+            
+            //textArea.append("\n num to clone:" + initChrom);
+            //textArea.append("\n num to Crossover:" + (popSize - initChrom));
+            
+            // create random chromosomes then sort them by fitness
+            makeMultipleChromosomes(popSize);
+            chromosomeList = sortChromosomes(chromosomeList);
+            // number of chromosomes to clone followed by the number that will be created through crossover
+                    int numClone = (int)initChrom;
+                    int numCross = popSize - numClone;
 
-            int numChrom1 = Integer.parseInt(populationSize.getText());
-            double prob = (Double.parseDouble(percentagePopulationField.getText()) * .01);
-            initChrom = (double)numChrom1 * prob;
             
-            System.out.println("initchrom: " + initChrom);
-            
-            makeMultipleChromosomes(numChrom1);
-            
-        
-        //int numClone = Integer.parseInt(nextGenField.getText());
-            int numClone = (int)initChrom;
-        if(elitistRadioButton.isSelected())
-            elitistNextGen(numClone);
-        else
-            tournamentNextGen(numClone);
-        //displayChromosomes(chromosomeNextGen);
-        
-        
-        int i = 0;
-        Chromosome b = new Chromosome();
-        int num = Integer.parseInt(crossoverTextField.getText());
-        while(i < num){
-            b = uniformCreation(chromosomeList);
-            chromosomeNextGen.add(b);
-            //printChromosome(b);
-            b = new Chromosome();
-            i++;
-        }
-        //displayChromosomes(childList);              
-        
-        double probability = Double.parseDouble(mutationField.getText()) * .01;
-        System.out.println(probability);
-        mutateChromosomes(chromosomeNextGen, probability);
-        
-        
-        displayChromosomes(chromosomeNextGen);
+            while(n < numGenerations){
+
+
+                // determines which selection algorithm is selected    
+                if(elitistRadioButton.isSelected())
+                    elitistNextGen(numClone);
+                else
+                    tournamentNextGen(numClone);
+
+
+                Chromosome b = new Chromosome();
+                while(i < numCross){
+                    if (kPointRadioButton.isSelected())
+                        b = kPointCreation(chromosomeList);
+                    else
+                        b = uniformCreation(chromosomeList);
+                    chromosomeNextGen.add(b);
+                    //printChromosome(b);
+                    b = new Chromosome();
+                    i++;
+                }
+                i=0;
+                //displayChromosomes(childList);              
+
+                double probability = Double.parseDouble(mutationField.getText()) * .01;
+
+                // mutate the chromosomes
+                mutateChromosomes(chromosomeNextGen, probability);
+
+                // compute the fitness after mutation
+                computeFitness(stockDataList, chromosomeNextGen);
+
+                // sort the chromosomes by fitness
+                chromosomeNextGen = sortChromosomes(chromosomeNextGen);
+                //displayChromosomes(chromosomeNextGen);
+                countGen++;
+                n++;
+                if(countGen >= 10){
+                    average = calculateAverage(chromosomeNextGen);
+                    average = Math.round(average*100.0)/100.0;
+                    max = findMax(chromosomeNextGen);
+                    min = findMin(chromosomeNextGen);
+                    //displayChromosomes(chromosomeNextGen);
+                    textArea.append("\nMax: " + max + " Min: " + min + " average: " + average+ "\n" );
+                    countGen = 0;
+                }
+                //chromosomeList.clear();
+                chromosomeList = copyChromosomeList(chromosomeNextGen);
+                //displayChromosomes(chromosomeList);
+                //displayChromosomes(chromosomeNextGen);
+            }
+            maxChromosome = findMaxChromosome(chromosomeNextGen);
+            displayMaxChromosome(maxChromosome);
         }
     }//GEN-LAST:event_submitButtonActionPerformed
 
@@ -540,15 +438,101 @@ public class GenAlgorithm extends javax.swing.JFrame {
             }
         });
     }
-    public void sortChromosomes(){
-        textArea.append("\nSorting chromosomes...");
+    public List<Chromosome> sortChromosomes(List<Chromosome> cl){
+        //textArea.append("\nSorting chromosomes...");
 
-        Collections.sort(chromosomeList);
+        Collections.sort(cl);
         
-        textArea.append ( "done!\n" );
-        printChromosomes();
+        //textArea.append ( "done!\n" );
+        //printChromosomes();
 
+        return cl;
+    }
+    
+    public void displayMaxChromosome(Chromosome c){
+        textArea.append("\n Max Chromosome: " + c.getNum1() + " | "  + c.getNum2() + " | "  + c.getNum3() + 
+                        " | "  + c.getNum4() + " | "  + c.getNum5() + " | Fitness = "  + c.getFitness() + "\n");
+    }
+    
+    public List<Chromosome> copyChromosomeList(List<Chromosome> l1){
+        Iterator iter = l1.iterator();
+        int count = 0;
+        Chromosome c = new Chromosome();
+        List<Chromosome> ch = new ArrayList<Chromosome>();
+        while(iter.hasNext()){
+            c = new Chromosome();
+            c.setNum1(l1.get(count).getNum1());
+            c.setNum2(l1.get(count).getNum2());
+            c.setNum3(l1.get(count).getNum3());
+            c.setNum4(l1.get(count).getNum4());
+            c.setNum5(l1.get(count).getNum5());
+            c.setFitness(l1.get(count).getFitness());
+            ch.add(c);
 
+            count++;
+            iter.next();
+        }
+        return ch;
+    }
+    
+    public double calculateAverage(List<Chromosome> ls){
+        int counta = 0;
+        double a = 0, sum = 0.0;
+        Iterator iter = ls.iterator();
+        while(iter.hasNext()){
+            sum = ls.get(counta).getFitness() + sum;
+            iter.next();
+            counta++;
+        }
+        a = sum / counta;
+        
+        
+        return a;
+    }
+    
+    public double findMax(List<Chromosome> ls){
+        int counta = 0;
+        double num = 0.0;
+        Iterator iter = ls.iterator();
+        while(iter.hasNext()){
+            if(num < ls.get(counta).getFitness()){
+                num = ls.get(counta).getFitness();
+            }
+            iter.next();
+            counta++;
+        }
+        
+        return num;
+    }
+    public Chromosome findMaxChromosome(List<Chromosome> ls){
+        int counta = 0;
+        double num = 0.0;
+        Iterator iter = ls.iterator();
+        Chromosome maxChrom = new Chromosome();
+        while(iter.hasNext()){
+            if(num < ls.get(counta).getFitness()){
+                num = ls.get(counta).getFitness();
+                maxChrom = ls.get(counta);
+            }
+            iter.next();
+            counta++;
+        }
+        
+        return maxChrom;
+    }
+    public double findMin(List<Chromosome> ls){
+        int counta = 0;
+        double num = 0.0;
+        Iterator iter = ls.iterator();
+        while(iter.hasNext()){
+            if(num > ls.get(counta).getFitness()){
+                num = ls.get(counta).getFitness();
+            }
+            iter.next();
+            counta++;
+        }
+        
+        return num;
     }
     
     public void displayChromosomes(List<Chromosome> c1){
@@ -566,34 +550,7 @@ public class GenAlgorithm extends javax.swing.JFrame {
         }
     }
     
-    public void printChromosomes(){
-        Iterator iter = chromosomeList.iterator(); 
-        int i = 0;
-        
 
-        while(iter.hasNext()){
-            System.out.println("col1: " + chromosomeList.get(i).getNum1()+"col2: " + chromosomeList.get(i).getNum2() + "col3: " + chromosomeList.get(i).getNum3()+
-            "col4: " + chromosomeList.get(i).getNum4() + "col5: " + chromosomeList.get(i).getNum5());
-            textArea.append("Chromosome " + (i+1) + ": " + chromosomeList.get(i).getNum1()+" | " + chromosomeList.get(i).getNum2() + " | " + chromosomeList.get(i).getNum3()+
-            " | " + chromosomeList.get(i).getNum4() + " | " + chromosomeList.get(i).getNum5() + "   fitness =  " + chromosomeList.get(i).getFitness() + "\n");
-            iter.next();
-            i++;
-        }
-    }
-    
-    public void printChromosomes2(){
-        
-        Iterator iter = chromosomeNextGen.iterator(); 
-        int i = 0;
-        while(iter.hasNext()){
-            System.out.println("col1: " + chromosomeNextGen.get(i).getNum1()+"col2: " + chromosomeNextGen.get(i).getNum2() + "col3: " + chromosomeNextGen.get(i).getNum3()+
-            "col4: " + chromosomeNextGen.get(i).getNum4() + "col5: " + chromosomeNextGen.get(i).getNum5());
-            textArea.append("Chromosome " + (i+1) + ": " + chromosomeNextGen.get(i).getNum1()+" | " + chromosomeNextGen.get(i).getNum2() + " | " + chromosomeNextGen.get(i).getNum3()+
-            " | " + chromosomeNextGen.get(i).getNum4() + " | " + chromosomeNextGen.get(i).getNum5() + "\n");
-            iter.next();
-            i++;
-        }
-    }
     
     
     public void readFile2(File selected)throws IOException{
@@ -620,7 +577,7 @@ public class GenAlgorithm extends javax.swing.JFrame {
             }
         }
         //printStockData2();
-        compareData();
+        //compareData();
     }
     
     public void printStockData2(){
@@ -694,8 +651,8 @@ public class GenAlgorithm extends javax.swing.JFrame {
                                         //System.out.println("in match");
 
             }
-            System.out.println("Fitness of Chromosome " + (i+1) + " = " + sum);
-            textArea.append("Fitness of Chromosome " + (i+1) + " = " + sum + "\n");
+            //System.out.println("Fitness of Chromosome " + (i+1) + " = " + sum);
+            //textArea.append("Fitness of Chromosome " + (i+1) + " = " + sum + "\n");
             ch.get(i).setFitness(sum);
             sum = 0;
             match = false;
@@ -704,82 +661,10 @@ public class GenAlgorithm extends javax.swing.JFrame {
             
             
         }
-        sortChromosomes();
+        //sortChromosomes(chromosomeNextGen);
         
     }    
 
-    public void compareData(){
-        Iterator stockIter = stockDataList.iterator();
-        Iterator chromIter = chromosomeList.iterator();
-        int i = 0, j = 0, countStock = 0, countChrom = 0, check = 0;
-        double currentStockData = 0.0;
-        double tempData = 0.0;
-        double sum = 0.0;
-        boolean match = false;
-        
-        
-        while(chromIter.hasNext()){
- 
-            while(stockIter.hasNext()){
-                
-                currentStockData = stockDataList.get(j).getCol1();
-                //System.out.println("Comparing... " + currentStockData + " & " + chromosomeList.get(i).getNum1());
-                if (countStock == 0){
-                    if ((currentStockData > chromosomeList.get(i).getNum1())&& (currentStockData < chromosomeList.get(i).getNum2())){
-                        check++;
-                        //System.out.println("Pass0");
-                        
-                    }
-                }
-                else if (countStock == 1){
-                    if ((stockDataList.get(j).getCol2() > chromosomeList.get(i).getNum3())&& (stockDataList.get(j).getCol2() < chromosomeList.get(i).getNum4())){
-                        check++;
-                        //System.out.println("Pass1");
-                        
-                    }
-                }
-                else if (countStock == 2){
-                    if (chromosomeList.get(i).getNum5() == 0){
-                        tempData = stockDataList.get(j).getCol3();
-                        tempData = tempData * -1.0;
-                    }
-                    if (check == 2){
-                        //System.out.println("Passed Both!!!");
-                        match = true;
-                        sum = tempData + sum;
-                    }
-                }
-                stockIter.next();
-                countStock++;
-                if(countStock > 2){
-                    countStock = 0;
-                    check = 0;
-                }
-                j++;
-            }
-            j = 0;
-            stockIter = stockDataList.iterator(); // reset iterator
-            sum = Math.round(sum*100.0)/100.0;
-            chromIter.next();
-            
-            if(match != true){
-                sum = -5000;
-                                        //System.out.println("in match");
-
-            }
-            System.out.println("Fitness of Chromosome " + (i+1) + " = " + sum);
-            textArea.append("Fitness of Chromosome " + (i+1) + " = " + sum + "\n");
-            chromosomeList.get(i).setFitness(sum);
-            sum = 0;
-            match = false;
-            tempData = 0;
-            i++;
-            
-            
-        }
-        sortChromosomes();
-        
-    }
     
     public boolean compare(double stock, double chrom){
         if (stock > chrom){
@@ -788,65 +673,7 @@ public class GenAlgorithm extends javax.swing.JFrame {
         return false;
     }
     
-    public void readFile(File selected)throws IOException{
-        Scanner scan = new Scanner(selectedFile);
-        int count1 = 0;
-        int check = 0;
-        double currentData = 0.0;
-        while(scan.hasNext()){
-            //System.out.print(scan.next());
-            if(count1 == 0){
-                //s.setCol1(scan.nextDouble());
-                currentData = scan.nextDouble();
-                System.out.println("count 0: " +currentData);
-                if ((currentData > c.getNum1())&& (currentData < c.getNum2()))
-                {
-                    check++;
-                    System.out.println("Pass0");
-                }
-            }
-            else if (count1 == 1){
-                //s.setCol2(scan.nextDouble());
-                currentData = scan.nextDouble();
-                                System.out.println("count 1: " + currentData);
-                if ((currentData > c.getNum3())&& (currentData < c.getNum4()))
-                {
-                    check++;
-                    System.out.println("Pass1");
-                }
-            }
-            else if (count1 == 2){
-                currentData = scan.nextDouble();
-                                System.out.println("count 2: " +currentData);
-                if (c.getNum5() == 0)
-                    currentData = currentData * -1.0;
-                if (check == 2){
-                    sumData = currentData + sumData;
-                }
-                /*
-                s.setCol3(scan.nextDouble());
-                stockDataList.add(s);
-                count1 = 0;
-                s = new stockData();
-                */
-            }
-            
-            count1++;
-            if(count1 > 2){
-                check  = 0;
-                count1 = 0;
-            }
-            /*
-            if( count1 > 2){
-                System.out.println();
-                count1 = 0;
-                s = new stockData();
-            }*/
-        }
-        System.out.println(sumData);
-        sumData = 0.0;
 
-    }
     
     public void printStockData(){
         Iterator it =  stockDataList.iterator(); 
@@ -918,7 +745,7 @@ public class GenAlgorithm extends javax.swing.JFrame {
     
     public void elitistNextGen(int numToClone){
         chromosomeNextGen.clear();
-        int numChromosomes = countNumberChromosomes();
+        int numChromosomes = countNumberChromosomes(chromosomeList);
         int i = 0;
         if (numToClone > numChromosomes)
             numToClone = numChromosomes;
@@ -932,21 +759,21 @@ public class GenAlgorithm extends javax.swing.JFrame {
     
     public void tournamentNextGen(int numToClone){
         chromosomeNextGen.clear();
-        int numChromosomes = countNumberChromosomes();
+        int numChromosomes = countNumberChromosomes(chromosomeList);
         int i = 0;
         if (numToClone > numChromosomes)
             numToClone = numChromosomes;
         
         while (i < numToClone){
-            chromosomeNextGen.add(tournamentSelection());
+            chromosomeNextGen.add(tournamentSelection(chromosomeList));
             i++;
         }
         i = 0;
     }
     
-    
-    public int countNumberChromosomes(){
-        Iterator iter = chromosomeList.iterator();
+    // returns the count of number chromosomes in a list
+    public int countNumberChromosomes(List<Chromosome> cc){
+        Iterator iter = cc.iterator();
         int count = 0;
         while(iter.hasNext()){
             count++;
@@ -955,6 +782,8 @@ public class GenAlgorithm extends javax.swing.JFrame {
         return count;
     }
     
+    //this function will run mutations on each chromosome's attributes
+    // with a passed in probability
     public void mutateChromosomes(List<Chromosome> cc, double probability){
         Iterator iter = cc.iterator();
         int i = 0;
@@ -982,25 +811,47 @@ public class GenAlgorithm extends javax.swing.JFrame {
         
     }
     
-    public Chromosome tournamentSelection(){
-        int numChromosomes = countNumberChromosomes();
+    // this function uses tournament selection to clone the next generation chromosomes
+    // based on which randomly selected two chromosomes has higher fitness
+    public Chromosome tournamentSelection(List<Chromosome> cc){
+        int numChromosomes = countNumberChromosomes(cc);
         int n1, n2;
         n1 = randomNum(numChromosomes-1, 0);
         n2 = randomNum(numChromosomes-1, 0);
-        System.out.println(n1);
-        System.out.println(n2);
 
         
-        if(chromosomeList.get(n1).getFitness() > chromosomeList.get(n2).getFitness())
+        if(cc.get(n1).getFitness() > cc.get(n2).getFitness())
         {
-            return chromosomeList.get(n1);
+            return cc.get(n1);
         }
         else
-            return chromosomeList.get(n2);
+            return cc.get(n2);
     }
     
+    
+    //this function takes two random chromosomes, and crosses their attributes
+    //to create a new child.
+    public Chromosome kPointCreation(List<Chromosome> c1){
+        int numChromosomes = countNumberChromosomes(c1);
+        int n1, n2;
+        double temp;
+        Chromosome child = new Chromosome();
+        n1 = randomNum(numChromosomes-1, 0);
+        n2 = randomNum(numChromosomes-1, 0);
+        
+        child.setNum1(c1.get(n1).getNum1());
+        child.setNum2(c1.get(n1).getNum2());
+        child.setNum3(c1.get(n2).getNum3());
+        child.setNum4(c1.get(n2).getNum4());
+        child.setNum5(c1.get(n2).getNum5());
+        
+        return child;
+    }
+    
+    // this function takes two random chromosomes
+    // and randomly chooses which attributes to take from two parents
     public Chromosome uniformCreation(List<Chromosome> c1){
-        int numChromosomes = countNumberChromosomes();
+        int numChromosomes = countNumberChromosomes(c1);
         int n1, n2;
         double temp;
         Chromosome child = new Chromosome();
@@ -1065,32 +916,23 @@ public class GenAlgorithm extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton clearWindowButton;
-    private javax.swing.JButton crossoverButton;
-    private javax.swing.JTextField crossoverTextField;
     private javax.swing.JRadioButton elitistRadioButton;
     private javax.swing.JLabel errorLabel;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JRadioButton kPointRadioButton;
     private javax.swing.JLabel multipleChromosomesError;
-    private javax.swing.JLabel multipleChromosomesLabel;
-    private javax.swing.JButton mutationButton;
     private javax.swing.JTextField mutationField;
-    private javax.swing.JButton nextGenButton;
-    private javax.swing.JTextField nextGenField;
-    private javax.swing.JButton numChromosomesButton;
-    private javax.swing.JTextField numChromosomesField;
+    private javax.swing.JTextField numGenerationsField;
+    private javax.swing.JLabel numGenerationsLabel;
     private javax.swing.JLabel percentLabel;
+    private javax.swing.JLabel percentLabel1;
     private javax.swing.JLabel percentageLabel;
     private javax.swing.JTextField percentagePopulationField;
     private javax.swing.JTextField populationSize;
     private javax.swing.JLabel populationSizeLabel;
     private javax.swing.JButton printButton;
-    private javax.swing.JButton printChild;
     private javax.swing.JLabel probabilityLabel;
     private javax.swing.JButton selectFileButton;
-    private javax.swing.JButton sortButton;
     private javax.swing.JButton submitButton;
     private javax.swing.JTextArea textArea;
     private javax.swing.JRadioButton tournamentRadioButton;

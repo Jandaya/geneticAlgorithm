@@ -423,7 +423,6 @@ public class GenAlgorithm extends javax.swing.JFrame {
                 average = Math.round(average * 100.0) / 100.0;
                 max = findMax(chromosomeNextGen);
                 min = findMin(chromosomeNextGen);
-                //displayChromosomes(chromosomeNextGen);
                 textArea.append("\nFitness stats after 10 generations:");
                 textArea.append("\nMax: " + max + "| Min: " + min + "| Average: " + average + "\n");
                 countGen = 0;
@@ -541,8 +540,6 @@ public class GenAlgorithm extends javax.swing.JFrame {
         
 
         while(iter.hasNext()){
-            System.out.println("col1: " + c1.get(i).getNum1()+"col2: " + c1.get(i).getNum2() + "col3: " + c1.get(i).getNum3()+
-            "col4: " + c1.get(i).getNum4() + "col5: " + c1.get(i).getNum5());
             textArea.append("Chromosome " + (i+1) + ": " + c1.get(i).getNum1()+" | " + c1.get(i).getNum2() + " | " + c1.get(i).getNum3()+
             " | " + c1.get(i).getNum4() + " | " + c1.get(i).getNum5() + "   fitness =  " + c1.get(i).getFitness() + "\n");
             iter.next();

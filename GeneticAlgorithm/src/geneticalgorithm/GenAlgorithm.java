@@ -28,8 +28,6 @@ public class GenAlgorithm extends javax.swing.JFrame {
     private List<Chromosome> chromosomeList = new ArrayList<Chromosome>();
     private List<stockData> stockDataList = new ArrayList<stockData>();
     private List<Chromosome> childList = new ArrayList<Chromosome>();
-    private Chromosome c = new Chromosome();
-    private stockData s = new stockData();
     private File selectedFile;
     private String sFile;
     private JFileChooser fc = new JFileChooser();
@@ -374,11 +372,10 @@ public class GenAlgorithm extends javax.swing.JFrame {
         percent = (Double.parseDouble(percentagePopulationField.getText()) * .01);
         initChrom = (double) popSize * percent;
 
-            //textArea.append("\n num to clone:" + initChrom);
-        //textArea.append("\n num to Crossover:" + (popSize - initChrom));
         // create random chromosomes then sort them by fitness
         makeMultipleChromosomes(popSize);
         chromosomeList = sortChromosomes(chromosomeList);
+        
         // number of chromosomes to clone followed by the number that will be created through crossover
         int numClone = (int) initChrom;
         int numCross = popSize - numClone;
@@ -603,26 +600,17 @@ public class GenAlgorithm extends javax.swing.JFrame {
         
         //iterate through chromosomes
         while(chromIter.hasNext()){
-                //textArea.append("\n || ");
-                //displayMaxChromosome(ch.get(i));
-                //textArea.append(" || ");
-        // iterate through stockData
             while(stockIter.hasNext()){
-                
                 currentStockData = sd.get(j).getCol1();
                 
                     if ((sd.get(j).getCol1() > ch.get(i).getNum1())&& (sd.get(j).getCol1() < ch.get(i).getNum2())){
                         check++;   
-                        //textArea.append("Pass0");
                     }
                 
-               
                     if ((sd.get(j).getCol2() > ch.get(i).getNum3())&& (sd.get(j).getCol2() < ch.get(i).getNum4())){
                         check++;      
-                        //textArea.append("Pass1");
                     }
-                
-                    
+
                     if (check > 1){
                         if (ch.get(i).getNum5() == 0){
                             tempData = sd.get(j).getCol3();
@@ -630,7 +618,6 @@ public class GenAlgorithm extends javax.swing.JFrame {
                         }
                         else
                             tempData = sd.get(j).getCol3();
-                        //textArea.append("Pass Both! \n");
 
                         match = true;
                         sum = tempData + sum;
@@ -715,6 +702,7 @@ public class GenAlgorithm extends javax.swing.JFrame {
     public Chromosome generateChromosome(){
         double num1, num2, num3, num4;
         int num5;
+        Chromosome c = new Chromosome();
         num1 = Math.round(generateRandom()*100.0)/100.0;
         
         num2 = Math.round(generateRandom()*100.0)/100.0;

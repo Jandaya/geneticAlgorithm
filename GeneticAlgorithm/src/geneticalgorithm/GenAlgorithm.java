@@ -502,7 +502,7 @@ public class GenAlgorithm extends javax.swing.JFrame {
     // finds tha maximum chromosome based on fitness
     public Chromosome findMaxChromosome(List<Chromosome> ls){
         int counta = 0;
-        double num = 0.0;
+        double num = ls.get(counta).getFitness();
         Iterator iter = ls.iterator();
         Chromosome maxChrom = new Chromosome();
         while(iter.hasNext()){
